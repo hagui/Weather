@@ -9,7 +9,6 @@ public class ApiHeader {
     public boolean success;
     public String message;
     public int code;
-    public String version;
 
     public ApiHeader() {
         clear();
@@ -18,8 +17,7 @@ public class ApiHeader {
     public void parse(JSONObject object) throws JSONException {
         clear();
         success = object.getBoolean("success");
-        code = object.getInt("code");
-        version = object.getString("version");
+        code = object.getInt("cod");
         message = object.getString("message");
     }
 
@@ -27,7 +25,6 @@ public class ApiHeader {
         success = false;
         message = "";
         code = -1;
-        version = "";
     }
 
 
